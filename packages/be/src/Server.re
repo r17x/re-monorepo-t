@@ -28,7 +28,7 @@ let checkProperties = (req, next, properties, k, res) => {
   let rec aux = properties =>
     switch (properties) {
     | [] => k(res)
-    | [p, ...tl] => checkProperty(req, next, p, (_) => aux(tl), res)
+    | [p, ...tl] => checkProperty(req, next, p, _ => aux(tl), res)
     };
   aux(properties);
 };
@@ -426,7 +426,7 @@ Router.use(router3, Middleware.urlencoded(~extended=true, ()));
 module Body = {
   type payload = {. "number": int};
   let jsonDecoder = json =>
-    Json.Decode.({"number": json |> field("number", int)});
+    Json.Decode.{"number": json |> field("number", int)};
   let urlEncodedDecoder = dict => {
     "number": Js.Dict.unsafeGet(dict, "number") |> int_of_string,
   };

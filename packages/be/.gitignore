@@ -1,3 +1,4 @@
+.DS_Store
 *.exe
 *.obj
 *.out
@@ -18,11 +19,11 @@
 *.annot
 *.cmj
 *.bak
-lib/bs
 *.mlast
 *.mliast
-.vscode
-.merlin
-.bsb.lock*.log
+*.vscode
+*.merlin
+*.bsb.lock*.log
 /node_modules/
 /_esy/
+/lib/

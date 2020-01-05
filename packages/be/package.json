@@ -2,6 +2,7 @@
   "name": "@ri7nz/be",
   "version": "0.1.0",
   "scripts": {
+    "server": "nodemon src/Server.bs.js",
     "clean": "bsb -clean-world",
     "build": "bsb -make-world",
     "watch": "bsb -make-world -w"
